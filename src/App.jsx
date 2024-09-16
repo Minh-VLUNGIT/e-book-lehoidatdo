@@ -1,11 +1,10 @@
-import Flipbook from "./components/Flipbook";
+import "./App.css";
+import Home from "./Pages/Home";
 
 function App() {
   return (
     <>
-      <div>
-        <Flipbook />
-      </div>
+    <Home/>
     </>
   );
 }

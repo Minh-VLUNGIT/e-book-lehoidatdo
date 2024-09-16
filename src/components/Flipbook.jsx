@@ -30,23 +30,21 @@ function Flipbook() {
           Lễ Hội Ẩm Thực Và Sản Vật Đặc Trưng Huyện Đất Đỏ
         </h1>
         <HTMLFlipBook width={600} height={420}>
-          {[...Array(numPages).keys()]
-            .filter((pNum) => pNum !== 0)
-            .map((pNum) => (
-              <Pages key={pNum} number={pNum + 1}>
-                <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page
-                    pageNumber={pNum}
-                    width={600}
-                    renderAnnotationLayer={false}
-                    renderTextLayer={false}
-                  />
-                </Document>
-                <p>
-                  Page {pNum} of {numPages}
-                </p>
-              </Pages>
-            ))}
+          {[...Array(numPages).keys()].map((pNum) => (
+            <Pages key={pNum} number={pNum + 1}>
+              <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
+                <Page
+                  pageNumber={pNum}
+                  width={600}
+                  renderAnnotationLayer={false}
+                  renderTextLayer={false}
+                />
+              </Document>
+              <p>
+                Page {pNum} of {numPages}
+              </p>
+            </Pages>
+          ))}
         </HTMLFlipBook>
       </div>
     </>
